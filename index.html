@@ -6,9 +6,20 @@
 	</head>
 	<body>
 
+		<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+
 		<script type="text/javascript" src="kata.js"></script>
 
-		<button onclick="mainPrinter.printPage(helloPage)">Click to print</button>
+		<form id="userSubmission" onsubmit="printUserPage();">
+			 Text <input id="userText" type="text" max="100"></input></br>
+  			<input type="radio" name="Color" value="cyan" checked> Cyan<br>
+  			<input type="radio" name="Color" value="magenta"> Magenta<br>
+  			<input type="radio" name="Color" value="yellow"> Yellow<br>
+  			<input type="radio" name="Color" value="black"> Black<br>
+  			</br><button type="submit">Click To Print</button>
+		</form>
+
+		<div id="output"></div>
 
 	</body>
 </html>

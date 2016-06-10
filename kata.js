@@ -23,6 +23,9 @@ var mainPrinter = {
 				break;
 			}
 
+		//Final Printout
+		$("#output").append(page.text + "<br/>");
+		alert(page.text);
 		console.log(page.text);
 		console.log("in\n");
 		console.log(page.color);
@@ -34,6 +37,7 @@ function Page(color, text){
 	this.text=text;
 };
 
+//Displays the ink levels after the page is printed
 Page.prototype.displayPotentialUsage = function(printer){
 	var c = printer.cyan;
 	var m = printer.magenta;
@@ -69,8 +73,26 @@ Page.prototype.displayPotentialUsage = function(printer){
 		}
 };
 
-var helloPage = new Page("cyan", "Hello World");
+function printUserPage(){
 
-helloPage.displayPotentialUsage(mainPrinter);
+	var userColor = document.getElementsByName("Color");
 
-mainPrinter.printPage(helloPage);
+	function getUserColor(userColorIn){
+		for (var i = 0, length = userColorIn.length; i < length; i++) {
+	    	if (userColorIn[i].checked) {
+	        	return userColorIn[i].value;
+
+	        	break;
+
+	    	}
+		}
+	}
+
+	var userPage = new Page( getUserColor(userColor), document.getElementById("userText").value );
+
+	userPage.displayPotentialUsage(mainPrinter);
+	
+	mainPrinter.printPage(userPage);
+
+}
+
