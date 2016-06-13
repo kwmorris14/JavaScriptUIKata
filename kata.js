@@ -118,7 +118,10 @@ mainPrinter.addPaper = function(){
 
 	if (mainPrinter.paperTrayCount > 1000){
 		alert("Tray Full");
-		paperTrayCount = 1000;
+		mainPrinter.paperTrayCount = 1000;
+	}
+	else {
+		alert("Paper Added");
 	}
 }
 
@@ -197,4 +200,3 @@ function printUserPage(){
 	mainPrinter.printPage(userPage);
 
 }
-
