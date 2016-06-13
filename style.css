@@ -1,0 +1,23 @@
+.cyan {
+	color: 	#00FFFF;
+	border: 1px solid black;
+    margin-bottom: 10px;
+}
+
+.magenta {
+	color: 	#FF00FF;
+	border: 1px solid black;
+    margin-bottom: 10px;
+}
+
+.yellow {
+	color: 	#FFFF00;
+	border: 1px solid black;
+    margin-bottom: 10px;
+}
+
+.black {
+	color: 	#000000;
+	border: 1px solid black;
+    margin-bottom: 10px;
+}

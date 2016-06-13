@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>Let's Practice some JavaScript!</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
 
 	</head>
 	<body>
@@ -10,14 +11,29 @@
 
 		<script type="text/javascript" src="kata.js"></script>
 
-		<form id="userSubmission" onsubmit="printUserPage();">
-			 Text <input id="userText" type="text" max="100"></input></br>
+			</br>
+			<button onclick="mainPrinter.displayInkLevels();">Check Ink Levels</button>
+  			<button onclick="mainPrinter.displayPaperTray();">Check Paper</button>
+  			</br>
+  			</br>
+  			<button onclick="mainPrinter.addPaper();">Add Paper</button>
+  			<button onclick="mainPrinter.addColor();">Add Color Ink</button>
+  			<button onclick="mainPrinter.addBlack();">Add Black Ink</button>
+  			</br>
+			 Text
+			</br> 
+			<textarea id="userText" type="text" max="100"></textarea></br>
+			</br>
+			 Color:
+			</br> 
   			<input type="radio" name="Color" value="cyan" checked> Cyan<br>
   			<input type="radio" name="Color" value="magenta"> Magenta<br>
   			<input type="radio" name="Color" value="yellow"> Yellow<br>
   			<input type="radio" name="Color" value="black"> Black<br>
-  			</br><button type="submit">Click To Print</button>
-		</form>
+  			</br>
+  			<button onclick="printUserPage();">Click To Print</button>
+  			</br>
+  			</br>
 
 		<div id="output"></div>
 

@@ -7,30 +7,132 @@ var mainPrinter = {
 	magenta:100,
 	yellow:100,
 	black:100,
+	inkOut:false,
+	paperTrayCount:500,
+	//Final Printout
 	printPage:function(page){
-		switch (page.color){
-			case "cyan":
-				this.cyan = this.cyan - page.text.length;
-				break;
-			case "magenta":
-				this.magenta = this.magenta - page.text.length();
-				break;
-			case "yellow":
-				this.yellow = this.yellow - page.text.length();
-				break;
-			case "black":
-				this.black = this.black - page.text.length();
-				break;
+		if(page.text != ""){
+			switch (page.color){
+				case "cyan":
+					this.cyan = this.cyan - page.text.length
+					if(this.cyan > 0 && this.paperTrayCount > 0){
+
+						$("#output").append("<div class=" + page.color + ">" + "<br/>" + page.text + "<br/>" + "</div>");
+						this.paperTrayCount -= 1;
+						console.log(page.text);
+						console.log("in\n");
+						console.log(page.color);
+					}
+					else if(this.paperTrayCount == 0){
+						alert('Insufficient Paper');
+						inkOut = true;
+						this.cyan = this.cyan + page.text.length
+					}
+					else{
+						alert('Insufficient Ink Level');
+						inkOut = true;
+						this.cyan = this.cyan + page.text.length
+					};
+					break;
+				case "magenta":
+					this.magenta = this.magenta - page.text.length
+					if(this.magenta > 0 && this.paperTrayCount > 0){
+						$("#output").append("<div class=" + page.color + ">" + "<br/>" + page.text + "<br/>" + "</div>");
+						this.paperTrayCount -= 1;
+						console.log(page.text);
+						console.log("in\n");
+						console.log(page.color);
+					}
+					else if(this.paperTrayCount == 0){
+						alert('Insufficient Paper');
+						inkOut = true;
+						this.cyan = this.cyan + page.text.length
+					}
+					else{
+						alert('Insufficient Ink Level');
+						inkOut = true;
+						this.cyan = this.cyan + page.text.length
+					};
+					break;
+				case "yellow":
+					this.yellow = this.yellow - page.text.length
+					if(this.yellow >=0 && this.paperTrayCount > 0){
+						$("#output").append("<div class=" + page.color + ">" + "<br/>" + page.text + "<br/>" + "</div>");
+						this.paperTrayCount -= 1;
+						console.log(page.text);
+						console.log("in\n");
+						console.log(page.color);
+					}
+					else if(this.paperTrayCount == 0){
+						alert('Insufficient Paper');
+						inkOut = true;
+						this.cyan = this.cyan + page.text.length
+					}
+					else{
+						alert('Insufficient Ink Level');
+						inkOut = true;
+						this.cyan = this.cyan + page.text.length
+					};
+					break;
+				case "black":
+					this.black = this.black - page.text.length
+					if(this.black >=0 && this.paperTrayCount>0){
+						$("#output").append("<div class=" + page.color + ">" + "<br/>" + page.text + "<br/>" + "</div>");
+						this.paperTrayCount -= 1;
+						console.log(page.text);
+						console.log("in\n");
+						console.log(page.color);
+					}
+					else if(this.paperTrayCount == 0){
+						alert('Insufficient Paper');
+						inkOut = true;
+						this.cyan = this.cyan + page.text.length
+					}
+					else{
+						alert('Insufficient Ink Level');
+						inkOut = true;
+						this.cyan = this.cyan + page.text.length
+					};
+					break;
+				}
+			}
+			else{
+				alert("Please enter text to print");
 			}
 
-		//Final Printout
-		$("#output").append(page.text + "<br/>");
-		alert(page.text);
-		console.log(page.text);
-		console.log("in\n");
-		console.log(page.color);
-	}
+		}
+	};
+
+mainPrinter.displayPaperTray = function(){
+	var paperDisplay = this.paperTrayCount + " Pages left.";
+	alert(paperDisplay);
 };
+
+mainPrinter.displayInkLevels = function(){
+	var leveDisplay = "Cyan: " + this.cyan + "\nMagenta: " + this.magenta + "\nYellow: " + this.yellow + "\nBlack: " + this.black;
+	alert(leveDisplay);
+};
+
+mainPrinter.addPaper = function(){
+	mainPrinter.paperTrayCount += 500;
+
+	if (mainPrinter.paperTrayCount > 1000){
+		alert("Tray Full");
+		paperTrayCount = 1000;
+	}
+}
+
+mainPrinter.addColor = function(){
+	mainPrinter.cyan = 100;
+	mainPrinter.magenta = 100;
+	mainPrinter.yellow = 100;
+	alert("Color cartridge changed");
+}
+
+mainPrinter.addBlack = function(){
+	mainPrinter.black = 100;
+	alert("Black cartridge changed");
+}
 
 function Page(color, text){
 	this.color=color;
@@ -54,21 +156,21 @@ Page.prototype.displayPotentialUsage = function(printer){
 			break;
 		case "magenta":
 			console.log("\n Cyan:" + (c));
-			console.log("\n Magenta:" + (m - this.text.length()));
+			console.log("\n Magenta:" + (m - this.text.length));
 			console.log("\n Yellow:" + (y));
 			console.log("\n Black:" + (k));
 			break;
 		case "yellow":
 			console.log("\n Cyan:" + (c));
 			console.log("\n Magenta:" + (m));
-			console.log("\n Yellow:" + (y - this.text.length()));
+			console.log("\n Yellow:" + (y - this.text.length));
 			console.log("\n Black:" + (k));
 			break;
 		case "black":
 			console.log("\n Cyan:" + (c));
 			console.log("\n Magenta:" + (m));
 			console.log("\n Yellow:" + (y));
-			console.log("\n Black:" + (k - this.text.length()));	
+			console.log("\n Black:" + (k - this.text.length));	
 			break;
 		}
 };
