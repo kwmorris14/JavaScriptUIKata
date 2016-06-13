@@ -21,3 +21,9 @@
 	border: 1px solid black;
     margin-bottom: 10px;
 }
+
+.header{
+	font-size: 24;
+}
+
+body{text-align:center};
