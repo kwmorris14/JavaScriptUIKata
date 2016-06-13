@@ -4,6 +4,25 @@
 		<title>Let's Practice some JavaScript!</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
 
+		<meta charset="utf-8">
+	  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	  	<title>AdminLTE 2 | Starter</title>
+	  	<!-- Tell the browser to be responsive to screen width -->
+	  	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	  	<!-- Bootstrap 3.3.6 -->
+	  	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	  	<!-- Font Awesome -->
+	  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+	  	<!-- Ionicons -->
+	  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+	  	<!-- Theme style -->
+	  	<link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+	  	<!-- AdminLTE Skins. We have chosen the skin-blue for this starter
+	        page. However, you can choose any other skin. Make sure you
+	        apply the skin class to the body tag so the changes take effect.
+	  	-->
+  		<link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
+
 	</head>
 	<body>
 
@@ -11,31 +30,34 @@
 
 		<script type="text/javascript" src="kata.js"></script>
 
-			<h1 class="header">Main Printer</h1>
-			</br>
-			<button onclick="mainPrinter.displayInkLevels();">Check Ink Levels</button>
-  			<button onclick="mainPrinter.displayPaperTray();">Check Paper</button>
-  			</br>
-  			</br>
-  			<button onclick="mainPrinter.addPaper();">Add Paper</button>
-  			<button onclick="mainPrinter.addColor();">Add Color Ink</button>
-  			<button onclick="mainPrinter.addBlack();">Add Black Ink</button>
-  			</br>
-  			</br>
-			 Text
-			</br> 
-			<textarea id="userText" type="text" max="100"></textarea></br>
-			</br>
-			 Color:
-			</br> 
-  			<input type="radio" name="Color" value="cyan" checked> Cyan<br>
-  			<input type="radio" name="Color" value="magenta"> Magenta<br>
-  			<input type="radio" name="Color" value="yellow"> Yellow<br>
-  			<input type="radio" name="Color" value="black"> Black<br>
-  			</br>
-  			<button onclick="printUserPage();">Click To Print</button>
-  			</br>
-  			</br>
+		<h1 class="header">Main Printer</h1>
+
+		
+
+		</br>
+		<button onclick="mainPrinter.displayInkLevels();">Check Ink Levels</button>
+		<button onclick="mainPrinter.displayPaperTray();">Check Paper</button>
+		</br>
+		</br>
+		<button onclick="mainPrinter.addPaper();">Add Paper</button>
+		<button onclick="mainPrinter.addColor();">Add Color Ink</button>
+		<button onclick="mainPrinter.addBlack();">Add Black Ink</button>
+		</br>
+		</br>
+		 Text
+		</br> 
+		<textarea id="userText" type="text" max="100"></textarea></br>
+		</br>
+		 Color:
+		</br> 
+		<input type="radio" name="Color" value="cyan" checked> Cyan<br>
+		<input type="radio" name="Color" value="magenta"> Magenta<br>
+		<input type="radio" name="Color" value="yellow"> Yellow<br>
+		<input type="radio" name="Color" value="black"> Black<br>
+		</br>
+		<button onclick="printUserPage();">Click To Print</button>
+		</br>
+		</br>
 
 		<div id="output"></div>
 

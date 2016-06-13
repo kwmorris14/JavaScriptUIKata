@@ -14,10 +14,9 @@ var mainPrinter = {
 		if(page.text != ""){
 			switch (page.color){
 				case "cyan":
-					this.cyan = this.cyan - page.text.length
-					if(this.cyan > 0 && this.paperTrayCount > 0){
-
-						$("#output").append("<div class=" + page.color + ">" + "<br/>" + page.text + "<br/>" + "</div>");
+					if((this.cyan- page.text.length) >= 0 && this.paperTrayCount > 0){
+						this.cyan = this.cyan - page.text.length
+						$("#output").append("<div class=\"printer-" + page.color + "\">" + "<br/>" + page.text + "<br/>" + "</div>");
 						this.paperTrayCount -= 1;
 						console.log(page.text);
 						console.log("in\n");
@@ -31,13 +30,12 @@ var mainPrinter = {
 					else{
 						alert('Insufficient Ink Level');
 						inkOut = true;
-						this.cyan = this.cyan + page.text.length
 					};
 					break;
 				case "magenta":
-					this.magenta = this.magenta - page.text.length
-					if(this.magenta > 0 && this.paperTrayCount > 0){
-						$("#output").append("<div class=" + page.color + ">" + "<br/>" + page.text + "<br/>" + "</div>");
+					if((this.cyan- page.text.length) >= 0 && this.paperTrayCount > 0){
+						this.magenta = this.magenta - page.text.length
+						$("#output").append("<div class=\"printer-" + page.color + "\">" + "<br/>" + page.text + "<br/>" + "</div>");
 						this.paperTrayCount -= 1;
 						console.log(page.text);
 						console.log("in\n");
@@ -51,13 +49,12 @@ var mainPrinter = {
 					else{
 						alert('Insufficient Ink Level');
 						inkOut = true;
-						this.cyan = this.cyan + page.text.length
 					};
 					break;
 				case "yellow":
 					this.yellow = this.yellow - page.text.length
-					if(this.yellow >=0 && this.paperTrayCount > 0){
-						$("#output").append("<div class=" + page.color + ">" + "<br/>" + page.text + "<br/>" + "</div>");
+					if((this.cyan- page.text.length) >=0 && this.paperTrayCount > 0){
+						$("#output").append("<div class=\"printer-" + page.color + "\">" + "<br/>" + page.text + "<br/>" + "</div>");
 						this.paperTrayCount -= 1;
 						console.log(page.text);
 						console.log("in\n");
@@ -71,13 +68,12 @@ var mainPrinter = {
 					else{
 						alert('Insufficient Ink Level');
 						inkOut = true;
-						this.cyan = this.cyan + page.text.length
 					};
 					break;
 				case "black":
 					this.black = this.black - page.text.length
-					if(this.black >=0 && this.paperTrayCount>0){
-						$("#output").append("<div class=" + page.color + ">" + "<br/>" + page.text + "<br/>" + "</div>");
+					if((this.cyan- page.text.length) >=0 && this.paperTrayCount>0){
+						$("#output").append("<div class=\"printer-" + page.color + "\">" + "<br/>" + page.text + "<br/>" + "</div>");
 						this.paperTrayCount -= 1;
 						console.log(page.text);
 						console.log("in\n");
@@ -91,7 +87,6 @@ var mainPrinter = {
 					else{
 						alert('Insufficient Ink Level');
 						inkOut = true;
-						this.cyan = this.cyan + page.text.length
 					};
 					break;
 				}

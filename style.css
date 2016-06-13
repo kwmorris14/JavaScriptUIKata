@@ -1,22 +1,22 @@
-.cyan {
+.printer-cyan {
 	color: 	#00FFFF;
 	border: 1px solid black;
     margin-bottom: 10px;
 }
 
-.magenta {
+.printer-magenta {
 	color: 	#FF00FF;
 	border: 1px solid black;
     margin-bottom: 10px;
 }
 
-.yellow {
+.printer-yellow {
 	color: 	#FFFF00;
 	border: 1px solid black;
     margin-bottom: 10px;
 }
 
-.black {
+.printer-black {
 	color: 	#000000;
 	border: 1px solid black;
     margin-bottom: 10px;
